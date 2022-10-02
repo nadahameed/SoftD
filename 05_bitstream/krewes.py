@@ -7,6 +7,7 @@
 #   - list[-n] -> last n elements of a list
 #QCC:
 #   - how do you add a value to a key WITHOUT CREATING A NEW PAIR mannn
+#   - can't append to objects?
 
 import random
 
@@ -23,13 +24,16 @@ krewes = {}
 for i in people:
     them = i.split("$$$")
     #print(i)
-    print("the devo and their traits:")
-    print(them)
-    pd = them[0]
+    #print("the devo and their traits:")
+    #print(them)
+    pd = int((them[0])[-1])
+
     if (pd not in krewes.keys()):
-        krewes[pd] = them[-2]
-    else:
-        krewes[pd].append(them[-2])
+        krewes[pd] = [] #now this pd exists
+    #print("XXX")
+    #print(krewes)
+    #print(krewes[pd])
+    krewes[pd].append(them[-2])
     devos.append(them[1])
     #print("devos:")
     #print(devos)
@@ -40,6 +44,10 @@ print(krewes)
 #choose a random devo
 randomDevo = random.choice(devos)
 print(randomDevo)
+
+periods = list(krewes.keys())
+beets = list(krewes.values())
+
 
 
 
