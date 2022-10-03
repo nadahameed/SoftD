@@ -4,10 +4,11 @@
 # 2022-09-28
 #DISCO:
 #   - dictionary = {key:[value,value],key:[value,value]....}
-#   - list[-n] -> last n elements of a list
+#   - list[-n] -> last n element of a list
 #QCC:
-#   - how do you add a value to a key WITHOUT CREATING A NEW PAIR mannn
+#   - how do you add a value to a key WITHOUT CREATING A NEW PAIR mannn (resolved)
 #   - can't append to objects?
+#   - instead of randomly picking devo first, mb pick the pd (the key) and go from there
 
 import random
 
@@ -33,24 +34,26 @@ for i in people:
     #print("XXX")
     #print(krewes)
     #print(krewes[pd])
-    krewes[pd].append(them[-2])
+    #print("them[-1]:")
+    #print(them[1])
+    person = [them[1],them[2]]
+    krewes[pd].append(person)
     devos.append(them[1])
     #print("devos:")
     #print(devos)
-print(krewes)
+#print(krewes)
 #print("devos:")
 #print(devos)
 
-#choose a random devo
-randomDevo = random.choice(devos)
-print(randomDevo)
+#choose a random pd
+pdList = list(krewes)
+ranpd = random.choice(pdList)
+#print(ranpd)
 
-periods = list(krewes.keys())
-beets = list(krewes.values())
+valueList = krewes[ranpd]
+me = random.choice(valueList)
 
-
-
-
-#end: print a random devo and then use the dictionary
-#   to print their pd and ducky too
-#list = [dictionary1,dictionary2]
+#putting it all together
+nombre = me[0]
+duck = me[1]
+print("this is " + nombre + " with ducky " + duck + " from period " + str(ranpd))
