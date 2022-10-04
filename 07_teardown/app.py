@@ -1,4 +1,8 @@
-# your heading here
+# Nada Hameed
+# Soft Dev
+# 07
+# 2022-10-03
+#time spent:
 
 from flask import Flask
 
@@ -16,12 +20,12 @@ app.run()  # Q5: Where have you seen similar constructs in other languages?
 DISCO:
 
 QCC:
-0. 
-1. 
-2. 
-3. 
-4. 
-5. 
+0.
+1.
+2.
+3.
+4.
+5.
 ...
 
 INVESTIGATIVE APPROACH:
