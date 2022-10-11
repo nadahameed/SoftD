@@ -12,4 +12,7 @@ def hello_world():
     return "No hablo queso!"
 
 app.run()
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4f7fb035e718d08d9243a815e326fb9d2fed379d
