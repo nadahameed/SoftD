@@ -19,12 +19,25 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 c.execute("CREATE TABLE student (name TEXT, age INTEGER, id INTEGER)")
 
-f = open('students.csv')
-contents = csv.reader(f)
+studentDict = {}
+studentDict["name"] = []
+studentDict["age"] = []
+studentDict["id"] = []
 
-insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)"
+# opening .csv file and reading it as a .DictReader object
+# adding the job class and percentage to their appropriate slots in the dictionary
+# .DictReader documentation --- https://docs.python.org/3/library/csv.html
+with open('students.csv') as f:
+    r =  csv.DictReader(f)
+    for row in r:
+        # making sure the total percentage is not accounted for
+        studentDict["name"].append(row['name'])
+            # making sure the percentage is a float, not a string
+        studentDict["age"].append(row['age'])
+        studentDict["id"].append(row['id'])
+print(studentDict)
 
-c.executemany(insert, contents)
+insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)",[studentDict["name"],studentDict["age"],studentDict["id"]]
 select = "SELECT * FROM student"
 
 rows = c.execute(select).fetchall()
