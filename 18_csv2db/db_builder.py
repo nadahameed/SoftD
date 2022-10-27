@@ -1,5 +1,5 @@
 #2 Whites & a Gray: Nada Hameed, Gitae Park, Brianna Tieu
-#SoftDev  
+#SoftDev
 #K18: (Python+SQLite)3: A Mare Widge Made in Hebben
 #Oct 2022
 
@@ -16,8 +16,8 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
-
-c.execute("CREATE TABLE student (name TEXT, age INTEGER, id INTEGER)")
+command = "create table student (name text, age int, id int);"
+c.execute(command)
 
 studentDict = {}
 studentDict["name"] = []
@@ -30,16 +30,19 @@ studentDict["id"] = []
 with open('students.csv') as f:
     r =  csv.DictReader(f)
     for row in r:
-        # making sure the total percentage is not accounted for
         studentDict["name"].append(row['name'])
-            # making sure the percentage is a float, not a string
         studentDict["age"].append(row['age'])
         studentDict["id"].append(row['id'])
+        things = row["name"] + row["age"] + row["id"]
+        command = "insert into student values(things);"
+        #command = "insert into student values ([studentDict["name"],studentDict["age"],studentDict["id"]])"
+        #c.execute(command)
 print(studentDict)
 
-insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)",[studentDict["name"],studentDict["age"],studentDict["id"]]
+#insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)",[studentDict["name"],studentDict["age"],studentDict["id"]]
 select = "SELECT * FROM student"
 
+#c.execute(insert)
 rows = c.execute(select).fetchall()
 for r in rows:
     print (r)
@@ -52,5 +55,3 @@ c.execute(command)    # run SQL statement
 
 db.commit() #save changes
 db.close()  #close database
-
-
