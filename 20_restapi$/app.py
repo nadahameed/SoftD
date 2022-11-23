@@ -28,7 +28,7 @@ def img():
     dictionary = json.loads(openimg.read()) #can't do .text bc: the JSON object must be str, bytes or bytearray, not HTTPResponse
 
     #HOW WE GET THE IMAGE TO DISPLAY:
-    return render_template('main.html',a=dictionary['url'])
+    return render_template('main.html',a=dictionary['url'],explanation=dictionary['explanation'])
 
 if __name__ == "__main__":
     app.debug = True
