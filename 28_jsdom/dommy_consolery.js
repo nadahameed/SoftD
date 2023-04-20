@@ -87,6 +87,7 @@ function fib (n) {
   else
       return fib(n-1) + (fib(n-2));
 } //into console: console.log(fib(10)); -> 55
+addItem("fib 10: " + fib(10));
 // FAC
 function fac (n) {
   if (n < 2)
@@ -94,6 +95,7 @@ function fac (n) {
   else
       return n * (fac (n -1));
 } //into console: console.log(fac(10)); -> 3628800
+addItem("fac(10): " + fac(10));
 // GCD (from piazza)
 function gcd (a, b) {
   if (a % b === 0){
@@ -101,6 +103,7 @@ function gcd (a, b) {
   }
   return gcd(b, a%b);
 } //into console: console.log(gcd(10,30)); -> 10
+addItem("gcd(10,30): " + gcd(10,30));
 
 
 // In addition to the style shown above,
