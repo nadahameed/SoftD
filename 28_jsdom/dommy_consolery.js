@@ -1,6 +1,7 @@
 /*
-- open index.html on FireFox
+- open index.html on FireFox (click on the file and it'll open in the web browser)
 - open console 
+--> to open console on mac, use option command c
 
 
 */
@@ -79,8 +80,28 @@ var stripe = function() {
 
 //insert your implementations here for...
 // FIB
+function fib (n) { 
+  if (n <= 1)
+      return n; 
+
+  else
+      return fib(n-1) + (fib(n-2));
+} //into console: console.log(fib(10)); -> 55
 // FAC
-// GCD
+function fac (n) {
+  if (n < 2)
+      return 1; 
+  else
+      return n * (fac (n -1));
+} //into console: console.log(fac(10)); -> 3628800
+// GCD (from piazza)
+function gcd (a, b) {
+  if (a % b === 0){
+    return b;
+  }
+  return gcd(b, a%b);
+} //into console: console.log(gcd(10,30)); -> 10
+
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
