@@ -1,0 +1,16 @@
+TOOLBOX:
+clearRect()
+getElementById()
+addEventListener()
+fillStyle()
+strokeStyle()
+fillRect()
+fillText()
+beginPath()
+fillStyle
+arc()
+fill()
+stroke()
+Math.PI
+offsetX
+offsetY
