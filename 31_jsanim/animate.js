@@ -14,30 +14,49 @@ ctx.fillStyle = '#ff0000';
 var requestID;
 
 var clear = (e) => {
-
+    ctx.clearRect(0,0,500,500);
 };
 
-var radius = 100;
+var radius = 0;
 var growing = true;
 
 var drawDot = () => {
-    //clear
-    ctx.clearRect(0,0,c.clientWidth,c.clientHeight)
+
+    window.cancelAnimationFrame(requestID);
+    
+    //ctx.clearRect(0,0,c.clientWidth,c.clientHeight)
+    //or clear method
+    clear();
 
     //repaint the circle
     ctx.beginPath();
-    ctx.arc(300, 300, radius, 0, 2 * Math.PI);
+    ctx.arc(250, 250, radius, 0, 2 * Math.PI);
     ctx.fill();
-    ctx.stroke();
 
-    requestID = window.requestAnimationFrame(requestID);
+    if(growing) {
+        if (radius < 100) {
+            //grow
+            radius = radius + 2;
+        }
+        else {
+            growing = false;
+        }
+    }
+    else {
+        if (radius > 0) {
+            //shrink
+            radius = radius - 2;
+        }
+        else {
+            growing = true;
+        }
+    }
 
-    while
+    requestID = window.requestAnimationFrame(drawDot);
 }
 
 //var stopIt = function
 var stopIt = () => {
-
     window.cancelAnimationFrame(requestID);
 }
 
