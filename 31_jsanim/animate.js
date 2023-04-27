@@ -1,4 +1,7 @@
-//heading
+//Team Liability Tease: Daniel and Nada
+//SoftDev pd2
+//K31 -- canvas based JS animation
+//2023-04-25t
 
 var c = document.getElementById("playground");
 //get dot button
@@ -34,7 +37,7 @@ var drawDot = () => {
     ctx.fill();
 
     if(growing) {
-        if (radius < 100) {
+        if (radius < 250) {
             //grow
             radius = radius + 2;
         }
