@@ -34,9 +34,12 @@ with open('students.csv') as f:
         studentDict["age"].append(row['age'])
         studentDict["id"].append(row['id'])
         things = row["name"] + row["age"] + row["id"]
+        print(things)
         command = "insert into student values(things);"
         #command = "insert into student values ([studentDict["name"],studentDict["age"],studentDict["id"]])"
         #c.execute(command)
+
+        
 print(studentDict)
 
 #insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)",[studentDict["name"],studentDict["age"],studentDict["id"]]
